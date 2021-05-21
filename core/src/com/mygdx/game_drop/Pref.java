@@ -12,11 +12,8 @@ public class Pref {
         hightScore = pref.getInteger("score",0);
         this.points = points;
     }
-
-
     public int getLevel(){
         if (hightScore<points) {
-            //hightScore++;
             hightScore = points;
             pref.putInteger("score", hightScore);
             pref.flush();

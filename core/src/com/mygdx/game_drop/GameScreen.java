@@ -37,8 +37,6 @@ public class GameScreen implements Screen {
 	Texture bombImage;
 	private static final int stepDrop = 5;
 	private static final int stepVelosity = 100;
-	//public static int highScore;
-	//static Preferences prefs;
 	public  GameScreen(final Drop gam) {
 		this.game = gam;
 
@@ -69,8 +67,6 @@ public class GameScreen implements Screen {
 		lastDropTime = 0;
 		lastDropTime = 0;
 
-		//prefs = Gdx.app.getPreferences("My Preferences"); //получаем файл персональных данных
-		//highScore = prefs.getInteger("highscore"); //получаем текущий лучший результат
 
 	}
 
@@ -138,7 +134,6 @@ public class GameScreen implements Screen {
 				lifes--;
 				bombMusic.play();
 				doOverlap = true;
-				//Gdx.input.vibrate(2000);
 			}
 			if (doOverlap){
 				iter.remove();
@@ -154,10 +149,6 @@ public class GameScreen implements Screen {
 				game.setScreen(new GameOver(game, points));
 
 			}
-			//if(points>GameScreen.highScore) {
-			//	GameScreen.highScore = points;
-			//}
-
 
 		}
 
@@ -171,11 +162,8 @@ public class GameScreen implements Screen {
 		rainMusic.dispose();
 		batch.dispose();
 		shakhta.dispose();
-		//bomb.dispose();
 		raindropsAndBombs.clear();
 		raindropsAndBombs = null;
-		//prefs.putInteger("highscore", highScore);
-		//prefs.flush(); //убедиться, что настройки сохранены
 		bombMusic.dispose();
 	}
 

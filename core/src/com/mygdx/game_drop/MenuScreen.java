@@ -29,7 +29,6 @@ public class MenuScreen implements Screen {
     TextButton.TextButtonStyle textButtonStyle;
     BitmapFont font;
     Skin skin;
-
     final Drop game;
     OrthographicCamera camera;
     public MenuScreen(final Drop gam) {

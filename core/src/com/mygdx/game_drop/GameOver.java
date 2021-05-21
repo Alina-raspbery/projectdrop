@@ -22,23 +22,18 @@ public class GameOver implements Screen {
     final Drop game;
     OrthographicCamera camera;
     int points;
-    //public static int highScore;
-    //static Preferences prefs;
+
     public GameOver(Drop game, int points) {
         this.game = game;
         this.points = points;
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 800, 480);
         shakhta = new Texture(Gdx.files.internal("shakhta.png"));
-        //prefs = Gdx.app.getPreferences("My Preferences"); //получаем файл персональных данных
-      //  highScore = prefs.getInteger("highscore"); //получаем текущий лучший результат
 
-       // int highScore = prefs.getLevel();
     }
 
     @Override
     public void show() {
-
     }
 
     @Override
@@ -51,12 +46,6 @@ public class GameOver implements Screen {
         game.batch.draw(shakhta, 0, 0);
         game.f.draw(game.batch, "Game over!", 360,340);
         game.f.draw(game.batch, "Your collection: "+ points, 100,120);
-        //if (readResults() < points){
-          //  writeResults(points);
-        //}
-       // if(points>GameScreen.highScore) {
-         ///   GameScreen.highScore = points;
-        //}
         Pref prefs = new Pref(points);
         int score = prefs.getLevel();
         game.f.draw(game.batch, "Best result: "+ score, 103,100);     //readResults()
@@ -68,32 +57,6 @@ public class GameOver implements Screen {
         }
 
     }
-   // private void writeResults(int value)  {
-     //   byte[] buffer = new byte[4];
-       // try {
-         //   OutputStream fos = Gdx.files.local("results.txt").write(false);
-           // DataOutputStream dos = new DataOutputStream(fos);
-           // dos.writeInt(value);
-        //} catch (FileNotFoundException e) {
-          //  e.printStackTrace();
-        //}catch (IOException e) {
-          //  e.printStackTrace();
-        //}
-    //}
-
-    //private int readResults(){
-      //  int value = -1;
-        //try {
-          //  InputStream fis = Gdx.files.local("results.txt").read();
-        //DataInputStream dis = new DataInputStream(fis);
-          //  value = dis.readInt();
-        //}
-        //catch (IOException e) {
-          //  e.printStackTrace();
-        //}
-        //return value;
-    //}
-//
     @Override
     public void resize(int width, int height) {
 
